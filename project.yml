@@ -10,7 +10,9 @@ settings:
     SWIFT_STRICT_CONCURRENCY: complete
     ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
-    DEVELOPMENT_TEAM: ''
+    DEVELOPMENT_TEAM: K2648T24P4
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
     MARKETING_VERSION: '0.6.0'
     CURRENT_PROJECT_VERSION: '21'
 packages:
@@ -26,7 +28,7 @@ targets:
         product: DuoCore
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: local.duoworkspace.client
+        PRODUCT_BUNDLE_IDENTIFIER: dev.jacobcx.DuoWorkspace
         TARGETED_DEVICE_FAMILY: '1,2'
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
@@ -61,12 +63,12 @@ targets:
         product: DuoHost
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: local.duoworkspace.host
-        CODE_SIGN_ENTITLEMENTS: Apps/macOS/DuoWorkspaceHost.entitlements
+        PRODUCT_BUNDLE_IDENTIFIER: dev.jacobcx.DuoWorkspaceHost
+        CODE_SIGN_ENTITLEMENTS: ''
         GENERATE_INFOPLIST_FILE: YES
         ENABLE_APP_SANDBOX: NO
-        CODE_SIGNING_ALLOWED: NO
-        DUO_LOCAL_SIGNING: YES
+        CODE_SIGNING_ALLOWED: YES
+        DUO_LOCAL_SIGNING: NO
         ENABLE_USER_SCRIPT_SANDBOXING: NO
       configs:
         Release:
@@ -81,6 +83,8 @@ targets:
         script: '"$SRCROOT/Scripts/build-microphone-driver.sh" "$TARGET_BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH"'
         showEnvVars: false
         basedOnDependencyAnalysis: false
+        outputFiles:
+          - $(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/DuoMicrophone.pkg
       - name: Sign local host
         script: '"$SRCROOT/Scripts/xcode-local-signing.sh" sign'
         showEnvVars: false

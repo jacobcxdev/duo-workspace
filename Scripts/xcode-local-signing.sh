@@ -6,6 +6,10 @@ case "${DUO_LOCAL_SIGNING:-YES}" in
       echo 'Enable local signing or configure Xcode signing before building the host.' >&2
       exit 1
     fi
+    if [[ "${1:-}" == sign ]]; then
+      # File providers can attach Finder metadata to generated app bundles.
+      xattr -cr "$TARGET_BUILD_DIR/$FULL_PRODUCT_NAME"
+    fi
     exit 0
     ;;
   YES) ;;
