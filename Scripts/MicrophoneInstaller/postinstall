@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+# Core Audio reloads HAL plug-ins when its service restarts.
+/usr/bin/killall coreaudiod || true
+exit 0

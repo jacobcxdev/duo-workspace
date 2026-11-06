@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+    <key>CFBundleIdentifier</key><string>local.duoworkspace.microphone.driver</string>
+    <key>CFBundleName</key><string>Duo Microphone</string>
+    <key>CFBundleExecutable</key><string>DuoMicrophone</string>
+    <key>CFBundlePackageType</key><string>BNDL</string>
+    <key>CFBundleVersion</key><string>1</string>
+    <key>CFBundleShortVersionString</key><string>1.0</string>
+    <key>CFPlugInDynamicRegistration</key><false/>
+    <key>CFPlugInFactories</key><dict>
+        <key>5D5DBCD6-50BF-41AC-B79C-B4CCDF77C882</key><string>DuoMicrophone_Create</string>
+    </dict>
+    <key>CFPlugInTypes</key><dict>
+        <key>443ABAB8-E7B3-491A-B985-BEB9187030DB</key><array><string>5D5DBCD6-50BF-41AC-B79C-B4CCDF77C882</string></array>
+    </dict>
+</dict></plist>
