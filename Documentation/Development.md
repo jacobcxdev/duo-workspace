@@ -31,8 +31,9 @@ The default toolchain is the Xcode selected by `xcode-select`; both apps build
 with Xcode 27.2. Run `./script/build_and_run.sh --verify` to build and launch
 the Mac host, or use the Codex Run action.
 
-The host omits the restricted virtual-HID entitlement for this installation.
-Native touch remains unavailable on macOS 27.0; use Trackpad or Touch mode.
+The host includes the virtual-HID entitlement for Native touch on macOS 27.3
+or later. Its App ID must enable HID Virtual Device (development), and Xcode
+must generate a matching development provisioning profile.
 The upstream local-signing instructions in the next two paragraphs apply when
 explicitly restoring that signing configuration.
 

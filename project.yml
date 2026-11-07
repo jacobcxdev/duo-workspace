@@ -64,7 +64,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.jacobcx.DuoWorkspaceHost
-        CODE_SIGN_ENTITLEMENTS: ''
+        CODE_SIGN_ENTITLEMENTS: Apps/macOS/DuoWorkspaceHost.entitlements
         GENERATE_INFOPLIST_FILE: YES
         ENABLE_APP_SANDBOX: NO
         CODE_SIGNING_ALLOWED: YES
